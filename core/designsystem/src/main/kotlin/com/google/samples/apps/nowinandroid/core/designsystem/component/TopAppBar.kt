@@ -33,6 +33,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.samples.apps.nowinandroid.core.designsystem.C
 import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
 
@@ -52,7 +53,10 @@ fun NiaTopAppBar(
     CenterAlignedTopAppBar(
         title = { Text(text = stringResource(id = titleRes)) },
         navigationIcon = {
-            IconButton(onClick = onNavigationClick) {
+            IconButton(
+                modifier = modifier.testTag(C.SEARCH_ICON),
+                onClick = onNavigationClick
+            ) {
                 Icon(
                     imageVector = navigationIcon,
                     contentDescription = navigationIconContentDescription,
